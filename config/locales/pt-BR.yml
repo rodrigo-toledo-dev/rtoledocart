@@ -235,6 +235,7 @@ pt-BR:
     index:
       title: 'Games'
       cart_title: 'Carrinho'
+      empty_cart: 'Até o momento seu carrinho está vazio'
       order:
         by_price: 'Preço'
         by_score: 'Popularidade'
