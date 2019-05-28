@@ -4,12 +4,8 @@
       %h1=t('.title')
     #div
       =select_tag(:games_order)
-  - @products.in_groups_of(3).each do |products|
-    .products
-      = render products
-#div
-  =t('.cart_title')
-  - if current_cart.products.blank?
-    .empty_cart
-      = image_tag 'cart-icon.svg'
-      %h3=t('.empty_cart')
+  .products_list
+    = render partial: 'products_list'
+.cart
+  = render partial: 'cart'
+  

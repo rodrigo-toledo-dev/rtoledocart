@@ -1,6 +1,8 @@
 .product
-  .image=image_tag url_for(product.image)
-  .title
-    = product.name
-  .price
-    = product.price
+  =image_tag url_for(product.image), class: 'image'
+  .description
+    .title
+      = product.name
+    .price
+      = number_to_currency product.price
+  =link_to t('home.add_to_cart.title'), add_to_cart_path(current_cart.id,product), remote: true, class: 'add_to_cart'
