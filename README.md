@@ -13,3 +13,5 @@ This is a project for testing the user rodrigo@rtoledo.inf.br and your habilitie
 * UI tecnologies
 
 ## Enjoy it
+ * Start with rails
+ `rails db:drop db:create db:migrate db:seed`
