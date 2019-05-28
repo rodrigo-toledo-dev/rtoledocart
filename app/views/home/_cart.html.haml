@@ -1,0 +1,24 @@
+- if current_cart.empty?
+  .empty_cart
+    = t('.cart_title')
+    = image_tag 'cart-icon.svg'
+    %h3=t('.empty_cart')
+- else
+  .cart_with_items
+    %h4=t('.cart_title_with_products', count: current_cart.products.count)
+    - current_cart.products.each do |product|
+      .image
+        =image_tag url_for(product.image)
+      .description
+        .title=product.name
+        .price=number_to_currency product.price
+    .total_without_freight
+      .title=t('.subtotal')
+      .value=number_to_currency(current_cart.total_without_freight)
+    .total_freight
+      .title=t('.freight')
+      .value=number_to_currency(current_cart.freight)
+    .cart_total
+      .title=t('.total')
+      .value=number_to_currency(current_cart.total)
+    

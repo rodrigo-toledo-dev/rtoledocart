@@ -1,0 +1,5 @@
+$('.cart').html("<%= j render 'home/cart', locals: {count: current_cart.product_ids} %>");
+$('.products_list').html("<%= j render 'home/products_list' %>");
+$('.description').hover(function() {
+  $(this).next('.add_to_cart').show();
+});
