@@ -1,9 +1,9 @@
 #div
   .header
-    #div
+    .title
       %h1=t('.title')
-    #div
-      =select_tag(:games_order)
+    .products_order
+      =select_tag(:product_order, options_for_select(orders_for_products), data: {action: order_products_path})
   .products_list
     = render partial: 'products_list'
 .cart

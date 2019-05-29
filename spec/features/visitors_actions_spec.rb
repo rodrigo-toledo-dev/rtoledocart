@@ -8,7 +8,7 @@ describe "Visitors actions" do
 
   scenario 'Visitor see areas' do
     expect(page).to have_content('Games')
-    find('#games_order').visible?
+    find('#product_order').visible?
     expect(page).to have_content('Carrinho')
   end
 
@@ -26,9 +26,6 @@ describe "Visitors actions" do
       end
     end
     
-    
-  
-
     context 'Visitor dont have products' do
       scenario 'Empty cart' do
         expect(page).to have_content('Até o momento seu carrinho está vazio')
