@@ -2,8 +2,12 @@ require 'faker'
 class Cart
   attr_accessor :id, :product_ids, :current_products
   def initialize(id = nil)
-    self.id = id || Faker::Number.number(10)
-    self.product_ids = []
+    if id.nil?
+      self.id = Faker::Number.number(10)
+    else
+      self.id = id
+    end
+    self.product_ids ||= []
   end
 
   def empty?
@@ -16,8 +20,13 @@ class Cart
     end
   end
 
-  def total_without_freight
-    total - freight
+  def remove_product(product_id)
+    return false unless self.product_ids.include?(product_id)
+    self.product_ids.delete_at(self.product_ids.index(product_id))
+  end
+
+  def total_with_freight
+    total + freight
   end
 
   def total

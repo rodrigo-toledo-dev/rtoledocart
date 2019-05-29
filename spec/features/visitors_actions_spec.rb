@@ -24,14 +24,6 @@ describe "Visitors actions" do
         page.has_selector?('.products_list .price', count: 6)
         page.has_selector?('.add_to_cart', count: 6, visible: false)
       end
-
-      # scenario 'User add product to cart', js: true do
-      #   it 'Add to cart' do
-      #     page.find('.description:first').trigger(:mouseover)
-      #     page.has_selector?('.add_to_cart', count: 1, visible: true)
-      #   end
-        
-      # end
     end
     
     

@@ -245,6 +245,9 @@ pt-BR:
       subtotal: subtotal
       freight: frete
       total: total
+      remove_from_cart: 'remover'
 
     add_to_cart:
       title: 'adicionar ao carrinho'
+    
+      
