@@ -12,13 +12,15 @@
       .description
         .title=product.name
         .price=number_to_currency product.price
-    .total_without_freight
+      .actions
+        =link_to t('.remove_from_cart'), remove_from_cart_path(current_cart.id, product.id), remote: true, class: 'remove_from_cart'
+    .total_with_freight
       .title=t('.subtotal')
-      .value=number_to_currency(current_cart.total_without_freight)
+      .value=number_to_currency(current_cart.total)
     .total_freight
       .title=t('.freight')
       .value=number_to_currency(current_cart.freight)
     .cart_total
       .title=t('.total')
-      .value=number_to_currency(current_cart.total)
+      .value=number_to_currency(current_cart.total_with_freight)
     
