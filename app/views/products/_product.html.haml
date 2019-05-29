@@ -1,5 +1,5 @@
 .product
-  =image_tag url_for(product.image), class: 'image'
+  .image_placeholder=image_tag url_for(product.image)
   .description
     .title
       = product.name

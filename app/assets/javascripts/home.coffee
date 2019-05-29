@@ -1,4 +1,4 @@
-$(document).ready ->
+$(document).on 'turbolinks:load', ->
   $('.description').hover ->
     $(this).next('.add_to_cart').show()
     return
