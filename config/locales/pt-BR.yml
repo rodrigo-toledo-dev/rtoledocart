@@ -236,16 +236,17 @@ pt-BR:
       title: 'Games'
       order:
         by_price: 'Preço'
-        by_score: 'Popularidade'
+        by_score: 'Mais populares'
         by_name: 'Ordem alfabética'
     cart:
       cart_title: 'Carrinho'
-      cart_title_with_products: Carrinho %{count} itens
+      cart_title_with_products: Carrinho (%{count} itens)
       empty_cart: 'Até o momento seu carrinho está vazio'
       subtotal: subtotal
       freight: frete
       total: total
       remove_from_cart: 'remover'
+      finalize_purchase: 'finalizar compra'
 
     add_to_cart:
       title: 'adicionar ao carrinho'

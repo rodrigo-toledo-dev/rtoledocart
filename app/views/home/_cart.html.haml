@@ -1,19 +1,21 @@
 - if current_cart.empty?
   .empty_cart
-    = t('.cart_title')
-    = image_tag 'cart-icon.svg'
-    %h3=t('.empty_cart')
+    %h1=t('.cart_title')
+    .place_holder
+      =image_tag 'cart-icon.svg'
+      %h3=t('.empty_cart')
 - else
   .cart_with_items
     %h4=t('.cart_title_with_products', count: current_cart.products.count)
     - current_cart.products.each do |product|
-      .image
-        =image_tag url_for(product.image)
-      .description
-        .title=product.name
-        .price=number_to_currency product.price
-      .actions
-        =link_to t('.remove_from_cart'), remove_from_cart_path(current_cart.id, product.id, order: params[:order]), remote: true, class: 'remove_from_cart', method: :delete
+      .cart_item
+        .image
+          =image_tag url_for(product.image)
+        .description
+          .title=product.name
+          .price=number_to_currency product.price
+        .actions
+          =link_to 'x', remove_from_cart_path(current_cart.id, product.id, order: params[:order]), remote: true, class: 'remove_from_cart', method: :delete
     .total_with_freight
       .title=t('.subtotal')
       .value=number_to_currency(current_cart.total)
@@ -23,4 +25,4 @@
     .cart_total
       .title=t('.total')
       .value=number_to_currency(current_cart.total_with_freight)
-    
+    .finalize_purchase=link_to(t('.finalize_purchase'), root_path)

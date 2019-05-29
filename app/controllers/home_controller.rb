@@ -3,6 +3,8 @@ class HomeController < ApplicationController
   before_action :set_products, only: [:index, :order_products, :add_to_cart, :remove_from_cart]
   def index
     session[:product_ids] = []
+    # session[:product_ids] = Product.ids
+    # current_cart.product_ids = session[:product_ids]
   end
 
   def order_products
