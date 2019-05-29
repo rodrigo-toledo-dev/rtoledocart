@@ -13,7 +13,7 @@
         .title=product.name
         .price=number_to_currency product.price
       .actions
-        =link_to t('.remove_from_cart'), remove_from_cart_path(current_cart.id, product.id), remote: true, class: 'remove_from_cart'
+        =link_to t('.remove_from_cart'), remove_from_cart_path(current_cart.id, product.id, order: params[:order]), remote: true, class: 'remove_from_cart', method: :delete
     .total_with_freight
       .title=t('.subtotal')
       .value=number_to_currency(current_cart.total)

@@ -5,4 +5,4 @@
       = product.name
     .price
       = number_to_currency product.price
-  =link_to t('home.add_to_cart.title'), add_to_cart_path(current_cart.id,product), remote: true, class: 'add_to_cart'
+  =link_to t('home.add_to_cart.title'), add_to_cart_path(current_cart.id,product, order: params[:order]), remote: true, class: 'add_to_cart'

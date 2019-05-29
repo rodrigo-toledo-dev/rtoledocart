@@ -1,10 +1,16 @@
 class HomeController < ApplicationController
   helper_method :current_cart
-  before_action :set_products, only: [:index, :add_to_cart, :remove_from_cart]
+  before_action :set_products, only: [:index, :order_products, :add_to_cart, :remove_from_cart]
   def index
     session[:product_ids] = []
   end
 
+  def order_products
+    respond_to do |format|
+      format.html { head :no_content }
+      format.js { render action: 'order_products' }
+    end
+  end
 
   def add_to_cart
     session[:product_ids] ||= []
