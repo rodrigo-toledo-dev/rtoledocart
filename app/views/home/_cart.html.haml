@@ -1,8 +1,9 @@
 - if current_cart.empty?
   .empty_cart
-    = t('.cart_title')
-    = image_tag 'cart-icon.svg'
-    %h3=t('.empty_cart')
+    %h1=t('.cart_title')
+    .place_holder
+      =image_tag 'cart-icon.svg'
+      %h3=t('.empty_cart')
 - else
   .cart_with_items
     %h4=t('.cart_title_with_products', count: current_cart.products.count)

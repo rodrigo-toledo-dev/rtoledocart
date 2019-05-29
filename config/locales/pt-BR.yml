@@ -236,7 +236,7 @@ pt-BR:
       title: 'Games'
       order:
         by_price: 'Preço'
-        by_score: 'Popularidade'
+        by_score: 'Mais populares'
         by_name: 'Ordem alfabética'
     cart:
       cart_title: 'Carrinho'
