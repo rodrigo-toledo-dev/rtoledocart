@@ -73,3 +73,4 @@ gem "haml-rails", "~> 2.0"
 gem 'factory_bot_rails'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'rails-controller-testing'
+gem "aws-sdk-s3", require: false
